@@ -1,12 +1,15 @@
-# Specialized Prompts
+# 🎯 Specialized Prompts
 
 Specialized prompts extend base system prompts to create AI assistants with specific expertise or capabilities. They build upon foundational behaviors to provide domain-specific knowledge, communication styles, and workflow patterns.
 
-## Categories
+## 📚 Available Specializations
 
-- **Domain Expertise** - Technical and subject matter expertise for specific fields
-- **Output Style** - Communication formats, tones, and presentation patterns
-- **Workflow** - Process flows, methodologies, and operational patterns
+| 📦 Specializations |
+|-------------------|
+| ├── 📂 [domain](domain/) # Technical and domain expertise prompts |
+| ├── 📂 [output-style](output-style/) # Communication formats and patterns |
+| ├── 📂 [workflow](workflow/) # Process flows and methodologies |
+| └── 📂 [documentation](documentation/) # Documentation workflows |
 
 ## Usage
 

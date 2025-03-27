@@ -1,10 +1,12 @@
-# Context Files
+# 🔧 Context Files
 
 Context files provide environment-specific information and capabilities that can be applied across multiple AI assistants. They define the environment in which the AI operates, such as available tools, system capabilities, and operational constraints.
 
-## Available Context
+## 📑 Available Context
 
-- `cursor-context.md` - Defines the Cursor IDE environment, including available tools, file system access, code understanding capabilities, and interactive features.
+| 📦 Context |
+|------------|
+| └── 📄 [cursor-context.prompt](cursor-context.prompt) |
 
 ## Contents
 

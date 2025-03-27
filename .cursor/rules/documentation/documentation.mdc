@@ -1,0 +1,85 @@
+---
+description: Rule for maintaining and updating documentation across the AI Prompt Catalog repository.
+globs: 
+alwaysApply: false
+---
+# Documentation Update Rule
+
+## Trigger Conditions
+This rule should be triggered when any of the following occurs:
+
+### File Changes
+- Any README.md file changes
+- Any documentation file in any directory changes
+- Any new documentation is added
+
+### User Requests
+When the user explicitly requests documentation updates with phrases like:
+- "update docs"
+- "improve documentation"
+- "fix documentation"
+- "review documentation"
+- "clean up docs"
+
+## Response Format
+```json
+{
+  "response_type": "documentation_update",
+  "action": "create|update|review|improve",
+  "target_file": "string",
+  "changes": {
+    "sections": ["array of modified sections"],
+    "formatting": ["array of formatting changes"],
+    "validation": {
+      "structure": boolean,
+      "content": boolean,
+      "formatting": boolean,
+      "links": boolean,
+      "emojis": boolean
+    }
+  }
+}
+```
+
+## SECTION: Required Actions
+
+### STEP: Initial Assessment
+
+Start with a step-by-step inventarisation of the work to be done. In order to do this in an organized and idempotent manner, always follow these steps:
+  1. Identify the target file(s) from the request or changed files
+  2. Verify the file type and location
+  3. Check if the file follows the correct structure based on its type
+  4. Review existing content for documentation needs
+  5. Systematically execute the **.cursor/rules/documentation/workflow.md** as your <workflow> to update the desired documentation pages.
+
+### STEP: Writing documentation
+
+Once you have assessed the documentation efforts that need to be performed, systematically process each file that needs to be updated or created. Work through them using the following approach:
+
+1. Go through the files **one-by-one**
+2. Make all necessary changes to each file in one go. Do not edit multiple files at the same time
+3. Before creating or updating sections within a file, always check your proposed writing against the established <guidelines> to ensure correctness and consistency.
+4. Only after processing all changes to a single file, move on to the next one and repeat the same steps.
+
+### STEP: Validating changes
+
+After writing all proposed documentation changes. Perform a systematic check as the final step of the process. For each of the updated pages use the following <checklist> to **verify** if no further changes are necessary.
+
+<checklist>
+- [ ] Structure follows established pattern
+- [ ] Content is focused and relevant
+- [ ] Formatting is consistent
+- [ ] Links are working
+- [ ] Emojis are appropriate
+- [ ] No meta-information in sub-READMEs
+- [ ] No usage instructions in sub-READMEs
+- [ ] No cross-references between READMEs
+- [ ] No redundant descriptions
+- [ ] Table formatting is correct
+- [ ] Indentation is proper
+- [ ] Section spacing is consistent
+- [ ] List formatting is uniform
+<checklist/>
+
+### STEP: reporting outcome
+Once all previous steps are executed, report the issues and provide specific suggestions for resolution to the user.
